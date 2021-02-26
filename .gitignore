@@ -1,4 +1,8 @@
 characters/
 screenshots/
 
+adminlist.txt
+bannedlist.txt
+permittedlist.txt
+
 *.log
