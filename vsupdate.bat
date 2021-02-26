@@ -6,7 +6,6 @@ echo Checking for world updates...
 git pull origin main
 
 for /f %%i in ('git diff --exit-code worlds') do set updated=%%i
-echo Updated: %updated%
 
 if "%updated%" == "" (
     echo Applying world updates...
