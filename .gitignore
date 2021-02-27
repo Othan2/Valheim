@@ -6,3 +6,5 @@ bannedlist.txt
 permittedlist.txt
 
 *.log
+
+config.cmd

@@ -1,5 +1,9 @@
 @echo off
 
+set steamLibrary=C:\Program Files (x86)\Steam
+
+if exist "config.cmd" call "./config" /wait
+
 cd %~dp0
 
 echo Checking for world updates...
@@ -14,4 +18,4 @@ if not "%updated%" == "" (
     echo Update finished
 )
 
-start "valheim.exe" "C:\Program Files (x86)\Steam\steamapps\common\Valheim\valheim.exe"
+start "valheim.exe" "%steamLibrary%\steamapps\common\Valheim\valheim.exe" /wait "./pushChanges.bat"
