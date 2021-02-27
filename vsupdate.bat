@@ -7,8 +7,6 @@ git fetch
 
 for /f %%i in ('git status -s') do set updated=%%i
 
-echo %updated%
-
 if not "%updated%" == "" (
     git pull origin main
     echo Applying world updates...
