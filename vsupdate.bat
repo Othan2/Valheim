@@ -3,11 +3,14 @@
 cd %~dp0
 
 echo Checking for world updates...
-git pull origin main
+git fetch
 
-for /f %%i in ('git diff --exit-code worlds') do set updated=%%i
+for /f %%i in ('git status -s') do set updated=%%i
 
-if "%updated%" == "" (
+echo %updated%
+
+if not "%updated%" == "" (
+    git pull origin main
     echo Applying world updates...
     xcopy /s "worlds" "%USERPROFILE%\AppData\LocalLow\IronGate\Valheim\worlds"
     echo Update finished
